@@ -1,0 +1,37 @@
+# Build:
+# docker build -t uwegerdes/yeoman .
+
+FROM uwegerdes/nodejs
+MAINTAINER Uwe Gerdes <entwicklung@uwegerdes.de>
+
+ENV USER_NAME node
+ENV NODE_HOME /home/${USER_NAME}
+ENV NODE_PATH ${NODE_HOME}/node_modules:/usr/lib/node_modules
+ENV APP_HOME ${NODE_HOME}/app
+
+# Set development environment as default
+ENV NODE_ENV development
+
+COPY package.json ${NODE_HOME}/
+
+# Install node.js environment
+RUN mkdir -p ${APP_HOME} && \
+	chown -R ${USER_NAME}:${USER_NAME} ${APP_HOME} && \
+	chown -R ${USER_NAME}:${USER_NAME} ${NODE_HOME}/package.json && \
+	npm ${NPM_LOGLEVEL} ${NPM_PROXY} install -g yo && \
+	npm cache clean
+
+# reduce rights
+USER ${USER_NAME}
+
+# set HOME
+ENV HOME ${NODE_HOME}
+
+# Install node_modules in ${NODE_PATH}
+WORKDIR ${NODE_HOME}
+RUN npm ${NPM_LOGLEVEL} ${NPM_PROXY} install && \
+	npm cache clean
+
+WORKDIR ${APP_HOME}
+
+CMD bash
