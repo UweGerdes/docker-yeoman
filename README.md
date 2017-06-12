@@ -25,28 +25,30 @@ $ docker build -t uwegerdes/yeoman .
 ### connect local project directory to /home/node/app
 
 ```bash
-$ docker run -it --rm \
+$ docker run -it \
+	-v ~/Projekte/publish/docker-yeoman/package.json:/home/node/package.json \
 	-v $(pwd):/home/node/app \
+	--name yeoman \
 	uwegerdes/yeoman bash
-```
-
-If you started yeoman without `--rm` you may restart and attach to the container (just hit RETURN to get a prompt):
-
-```bash
-$ docker start --attach -i yeoman
 ```
 
 Install a generator with:
 
 ```bash
 $ cd ${HOME} && \
-	cp ${APP_HOME}/package.json . && \
 	npm ${NPM_LOGLEVEL} ${NPM_PROXY} --save-dev install generator-generator && \
-	cp package.json ${APP_HOME}/ && \
 	cd ${APP_HOME}
 ```
 
-The cp commands make shure that `npm` uses the projects `package.json`. Because `npm` hard replaces `package.json` it cannot use a soft link inside the container.
+The `package.json` for the Dockerfile should be used - so you can rebuild a full blown yeoman generator collection.
+
+If you will want to restart and attach to the container (just hit RETURN to get a prompt):
+
+```bash
+$ docker start --attach -i yeoman
+```
+
+You can also docker commit the container to have the generators ready for a new container.
 
 ## Scaffolding
 

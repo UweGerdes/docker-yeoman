@@ -1,7 +1,7 @@
 {
   "name": "yeoman",
   "description": "Yeoman packed in a Dockerfile",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Uwe Gerdes",
     "email": "entwicklung@uwegerdes.de"
@@ -19,6 +19,5 @@
     "start": "yo --help"
   },
   "devDependencies": {
-    "generator-generator": "^3.1.0"
   }
 }
