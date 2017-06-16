@@ -26,7 +26,6 @@ $ docker build -t uwegerdes/yeoman .
 
 ```bash
 $ docker run -it \
-	-v ~/Projekte/publish/docker-yeoman/package.json:/home/node/package.json \
 	-v $(pwd):/home/node/app \
 	--name yeoman \
 	uwegerdes/yeoman bash
@@ -61,17 +60,17 @@ $ yo generator:subgenerator <name>
 
 ## Using your generator templates
 
-TODO: If you have templates for Yeoman you can link that directory as a volume and the yo command will find it.
+If you have templates for Yeoman you can link that directory as a volume and the yo command will find it.
 
 ```bash
 $ docker run -it \
 	-v ~/Projekte/publish/ez54/yo_src:/home/node/yo_src \
 	-v $(pwd):/home/node/app \
-	--name yeoman2 \
+	--name yeoman3 \
 	uwegerdes/yeoman bash
 ```
 
-Make a symbolic link to /home/node/node_modules/ for your generators. Do not use `npm link` - it will install node_modules in your yo_src directory.
+Make a symbolic link to `ln -s /home/node/yo_src/* /home/node/node_modules/` to include your generators. Do not use `npm link` - it will install node_modules in your yo_src directory.
 
 ## Generator development support
 

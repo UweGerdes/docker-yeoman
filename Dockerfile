@@ -34,4 +34,4 @@ RUN npm ${NPM_LOGLEVEL} ${NPM_PROXY} install && \
 
 WORKDIR ${APP_HOME}
 
-CMD bash
+CMD ln -f -s /home/node/yo_src/* /home/node/node_modules/ && bash
