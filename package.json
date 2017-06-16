@@ -1,7 +1,7 @@
 {
   "name": "yeoman",
   "description": "Yeoman packed in a Dockerfile",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": {
     "name": "Uwe Gerdes",
     "email": "entwicklung@uwegerdes.de"
@@ -19,6 +19,13 @@
     "start": "yo --help"
   },
   "devDependencies": {
-    "generator-generator": "^3.1.0"
+    "eslint": "^3.18.0",
+    "eslint-config-xo-space": "^0.16.0",
+    "generator-generator": "^3.1.0",
+    "jest": "^19.0.2",
+    "jest-cli": "^20.0.0",
+    "nsp": "^2.6.3",
+    "yeoman-assert": "^3.0.0",
+    "yeoman-test": "^1.6.0"
   }
 }

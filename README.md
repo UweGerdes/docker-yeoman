@@ -66,8 +66,8 @@ If you have templates for Yeoman you can link that directory as a volume and the
 $ docker run -it \
 	-v ~/Projekte/publish/ez54/yo_src:/home/node/yo_src \
 	-v $(pwd):/home/node/app \
-	--name yeoman3 \
-	uwegerdes/yeoman bash
+	--name yeoman4 \
+	uwegerdes/yeoman
 ```
 
 Make a symbolic link to `ln -s /home/node/yo_src/* /home/node/node_modules/` to include your generators. Do not use `npm link` - it will install node_modules in your yo_src directory.
