@@ -70,9 +70,15 @@ $ docker run -it \
 	uwegerdes/yeoman
 ```
 
-Make a symbolic link to `ln -s /home/node/yo_src/* /home/node/node_modules/` to include your generators. Do not use `npm link` - it will install node_modules in your yo_src directory.
-
 ## Generator development support
+
+Start another bash in a running container:
+
+```bash
+$ docker exec -it yeoman4 bash
+$ cd /home/node/yo_src/generator-ez54
+$ npm test
+```
 
 TODO: For your convenience a gulpfile is provided for checking the the generators directory.
 
