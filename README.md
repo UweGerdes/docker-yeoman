@@ -32,7 +32,7 @@ $ docker run -it \
 	uwegerdes/yeoman bash
 ```
 
-Install a generator with:
+Install a generator with (generator-generator is already installed in image):
 
 ```bash
 $ cd ${HOME} && \
@@ -58,6 +58,24 @@ Generate with yeoman with the wizard or use a special subgenerator:
 $ yo generator
 $ yo generator:subgenerator <name>
 ```
+
+## Using your generator templates
+
+TODO: If you have templates for Yeoman you can link that directory as a volume and the yo command will find it.
+
+```bash
+$ docker run -it \
+	-v ~/Projekte/publish/ez54/yo_src:/home/node/yo_src \
+	-v $(pwd):/home/node/app \
+	--name yeoman2 \
+	uwegerdes/yeoman bash
+```
+
+Make a symbolic link to /home/node/node_modules/ for your generators. Do not use `npm link` - it will install node_modules in your yo_src directory.
+
+## Generator development support
+
+TODO: For your convenience a gulpfile is provided for checking the the generators directory.
 
 ## License
 

@@ -1,3 +1,4 @@
 # CHANGELOG docker-yeoman
 
-17-06-12 project created
+0.0.2 empty generator works
+0.0.1 project created
