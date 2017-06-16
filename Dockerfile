@@ -18,7 +18,12 @@ COPY package.json ${NODE_HOME}/
 RUN mkdir -p ${APP_HOME} && \
 	chown -R ${USER_NAME}:${USER_NAME} ${APP_HOME} && \
 	chown -R ${USER_NAME}:${USER_NAME} ${NODE_HOME}/package.json && \
-	npm ${NPM_LOGLEVEL} ${NPM_PROXY} install -g yo && \
+	npm ${NPM_LOGLEVEL} ${NPM_PROXY} install -g \
+				eslint \
+				jest \
+				jest-cli \
+				nsp \
+				yo && \
 	npm cache clean
 
 # reduce rights
