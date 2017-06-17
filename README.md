@@ -66,9 +66,9 @@ Please go to your project base directory and run the container with:
 
 ```bash
 $ docker run -it \
-	-v ~/Projekte/publish/ez54/yo_src:/home/node/yo_src \
+	-v ~/Projekte/publish/yeoman/yo_src:/home/node/yo_src \
 	-v $(pwd):/home/node/app \
-	--name yeoman5 \
+	--name yeoman \
 	uwegerdes/yeoman
 ```
 
@@ -77,8 +77,8 @@ $ docker run -it \
 Start another bash in a running container:
 
 ```bash
-$ docker exec -it yeoman5 bash
-$ cd /home/node/yo_src/generator-ez54
+$ docker exec -it yeoman bash
+$ cd /home/node/yo_src/generator-tle
 $ npm test
 ```
 
