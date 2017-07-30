@@ -31,7 +31,7 @@ $ docker run -it \
 	uwegerdes/yeoman bash
 ```
 
-Install a generator with (generator-generator is already installed in image):
+Install a generator with:
 
 ```bash
 $ cd ${HOME} && \
