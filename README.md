@@ -25,7 +25,7 @@ $ docker build -t uwegerdes/yeoman .
 ### connect local project directory to /home/node/app
 
 ```bash
-$ docker run -it \
+$ docker run -it --rm \
 	-v $(pwd):/home/node/app \
 	--name yeoman \
 	uwegerdes/yeoman bash
@@ -65,7 +65,7 @@ If you have templates for Yeoman you can link that directory as a volume and the
 Please go to your project base directory and run the container with:
 
 ```bash
-$ docker run -it \
+$ docker run -it --rm \
 	-v ~/Projekte/publish/yeoman/yo_src:/home/node/yo_src \
 	-v $(pwd):/home/node/app \
 	--name yeoman \
