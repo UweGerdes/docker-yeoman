@@ -12,13 +12,15 @@ ENV APP_HOME ${NODE_HOME}/app
 # Set development environment as default
 ENV NODE_ENV development
 
+USER root
+
 COPY package.json ${NODE_HOME}/
 
 # Install node.js environment
 RUN mkdir -p ${APP_HOME} && \
 	chown -R ${USER_NAME}:${USER_NAME} ${APP_HOME} && \
 	chown -R ${USER_NAME}:${USER_NAME} ${NODE_HOME}/package.json && \
-	npm ${NPM_LOGLEVEL} ${NPM_PROXY} install -g \
+	npm install -g \
 				eslint \
 				jest-cli \
 				nsp \
@@ -33,7 +35,7 @@ ENV HOME ${NODE_HOME}
 
 # Install node_modules in ${NODE_PATH}
 WORKDIR ${NODE_HOME}
-RUN npm ${NPM_LOGLEVEL} ${NPM_PROXY} install && \
+RUN npm install && \
 	npm cache clean
 
 WORKDIR ${APP_HOME}
