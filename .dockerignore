@@ -1,6 +1,3 @@
-# these files are not needed during build time
-CHANGELOG.md
-LICENSE.md
+# not needed during build time
 .git
-.github
-# some more but not included here
+
