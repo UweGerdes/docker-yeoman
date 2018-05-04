@@ -1,4 +1,4 @@
-# Yeoman Dockerfile
+# Yeoman Dockerfile [![Build Status](https://travis-ci.org/UweGerdes/docker-yeoman.svg?branch=master)](https://travis-ci.org/UweGerdes/docker-yeoman)
 
 Yeoman wrapped in a Dockerfile to use it in different projects for my environment.
 
