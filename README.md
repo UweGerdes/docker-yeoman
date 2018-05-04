@@ -35,7 +35,7 @@ Generators from `/home/node/yo_src` and `/home/node/app/yo_src` are linked to `/
 Install a generator (--save in projects package.json) with:
 
 ```bash
-$ npmis generator-generator
+$ npmisd generator-generator
 ```
 
 This command uses a small script that copies
