@@ -12,32 +12,33 @@ Make sure you have installed all of the following prerequisites on your developm
 
 This should start up an environment for scaffolding with Yeoman.
 
-## Build with uwegerdes/nodejs image
+## Build
 
 ```bash
 $ docker build -t uwegerdes/yeoman .
 ```
 
-### connect local project directory to /home/node/app - it could contain a yo_src subdirectory with generators
+### Run
+
+Start container in your project directory (with own generators in subdirectory `yo_src`) and another directory with generators:
 
 ```bash
 $ docker run -it \
+	-v /home/user/some/directory/with/yo_src:/home/node/yo_src \
 	-v $(pwd):/home/node/app \
-	--name yeoman \
-	uwegerdes/yeoman
+	--name project-yeoman \
+	uwegerdes/yeoman bash
 ```
 
 Generators from `/home/node/yo_src` and `/home/node/app/yo_src` are linked to `/home/node/node_modules` and should be available for `yo`.
 
-Install a generator with:
+Install a generator (--save in projects package.json) with:
 
 ```bash
-$ cd ${NODE_HOME} && \
-	cp ${APP_HOME}/package.json . && \
-	npm ${NPM_LOGLEVEL} ${NPM_PROXY} --save-dev install generator-generator && \
-	cp package.json ${APP_HOME}/ && \
-	cd ${APP_HOME}
+$ npmis generator-generator
 ```
+
+This command uses a small script that copies
 
 The `package.json` in your working directory (linked to /home/node/app) is used - so you can rebuild a full blown yeoman generator collection.
 
