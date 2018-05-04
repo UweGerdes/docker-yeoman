@@ -1,7 +1,7 @@
 {
   "name": "yeoman",
   "description": "Yeoman packed in a Dockerfile",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": {
     "name": "Uwe Gerdes",
     "email": "entwicklung@uwegerdes.de"
@@ -16,10 +16,11 @@
     "url": "https://github.com/uwegerdes/docker-yeoman"
   },
   "scripts": {
-    "start": "yo --help"
+    "start": "yo --help",
+    "test": "cd yo_src/generator-docker && npm test"
   },
   "devDependencies": {
-    "generator-generator": "^3.2.0",
+    "generator-generator": "^4.0.2",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.7.0"
   }

@@ -16,3 +16,4 @@ if [ ! -w "${APP_HOME}/" ]; then
 fi
 
 exec "$@"
+

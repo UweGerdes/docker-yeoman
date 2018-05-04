@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Uwe Gerdes",
+      "authorEmail": "entwicklung@uwegerdes.de",
+      "authorUrl": "http://entwicklung.uwegerdes.de/"
+    }
+  }
+}

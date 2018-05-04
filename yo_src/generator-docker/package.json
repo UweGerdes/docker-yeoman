@@ -1,0 +1,48 @@
+{
+  "name": "generator-docker",
+  "version": "0.0.1",
+  "description": "generating Docker files",
+  "homepage": "http://generators.uwegerdes.de/",
+  "author": {
+    "name": "Uwe Gerdes",
+    "email": "entwicklung@uwegerdes.de",
+    "url": "http://entwicklung.uwegerdes.de/"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/app/index.js",
+  "keywords": [
+    "docker",
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-xo-space": "^0.16.0",
+    "jest": "^19.0.2",
+    "yeoman-assert": "^3.0.0",
+    "yeoman-test": "^1.6.0"
+  },
+  "dependencies": {
+    "yeoman-generator": ">=1.0.0",
+    "chalk": ">=1.1.3",
+    "yosay": ">=2.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "prepublish": "nsp check",
+    "pretest": "eslint . --fix",
+    "test": "jest"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "jest": true,
+      "node": true
+    }
+  },
+  "repository": "/generator-docker",
+  "license": "MIT"
+}

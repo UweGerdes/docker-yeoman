@@ -1,7 +1,4 @@
-#
 # Dockerfile for yeoman
-#
-# docker build -t uwegerdes/yeoman .
 
 FROM uwegerdes/nodejs
 MAINTAINER Uwe Gerdes <entwicklung@uwegerdes.de>
@@ -15,6 +12,9 @@ WORKDIR ${NODE_HOME}
 COPY package.json ${NODE_HOME}/
 
 RUN npm install -g \
+				eslint \
+				eslint-config-xo-space \
+				jest \
 				yo && \
 	npm install && \
 	chown -R ${USER_NAME}:${USER_NAME} ${NODE_HOME}

@@ -74,6 +74,20 @@ $ docker run -it --rm \
 	uwegerdes/yeoman
 ```
 
+## Testing your generator templates
+
+To execute tests for your developing generator use:
+
+```bash
+$ docker run -it --rm \
+	-v ~/projekts/yeoman/yo_src:/home/node/yo_src \
+	-v $(pwd):/home/node/app \
+	--name yeoman \
+	uwegerdes/yeoman bash
+node@docker$ cd yo_src/generator-mygenerator
+node@docker$ npm test
+```
+
 ## Generator development support
 
 Start another bash in a running container:
@@ -87,3 +101,4 @@ $ npm test
 ## License
 
 [The MIT License](LICENSE.md)
+
