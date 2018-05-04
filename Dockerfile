@@ -28,4 +28,3 @@ USER ${USER_NAME}
 WORKDIR ${APP_HOME}
 
 CMD bash
-
