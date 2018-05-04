@@ -7,4 +7,4 @@ before_install:
   - docker build -t uwegerdes/compare-layouts .
 
 script:
-  - echo $PATH && ls -l /usr/bin && npm test
+  - docker run -v $(pwd):/home/node/app uwegerdes/yeoman npm test
