@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "generator-generator": "^4.0.2",
-    "yeoman-assert": "^3.0.0",
-    "yeoman-test": "^1.7.0"
+    "yeoman-assert": "^3.1.1",
+    "yeoman-test": "^2.0.0"
   }
 }
